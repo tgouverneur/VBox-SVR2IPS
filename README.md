@@ -89,12 +89,15 @@ Installation
 
 To install the latest version, run:
 
+```
 # pkg install virtualbox virtualbox-extpack
+```
 
 To install a specific version, use:
 
+```
 # pkg install pkg:/system/virtualbox@0.5.11-4.1.12.77245 pkg:/system/virtualbox-extpack@0.5.11-4.1.12.77245
-
+```
 Upgrade
 =======
 
