@@ -26,10 +26,10 @@ Usage
 $ ./svr2ips_vbox.sh
 ./svr2ips_vbox.sh <SVR4> <IPS repo> [cache]
 
-	 SVR4 is the .pkg file extracted from the VirtualBox's downloaded package.
-	 IPS repo, is where you want the generated IPS package to be sent to.
-	 cache, optionnal lint-cache directory, to speedup package resolution if you're going to run
-	the script multiple times.
+ * SVR4 is the .pkg file extracted from the VirtualBox's downloaded package.
+ * IPS repo, is where you want the generated IPS package to be sent to.
+ * cache, optionnal lint-cache directory, to speedup package resolution if you're going to run the script multiple times.
+
 
 $ ./svr2ips_xtp.sh 
 ./svr2ips_xtp.sh <XTP> <IPS repo> [cache]
