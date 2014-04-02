@@ -176,6 +176,7 @@ cat > virtualbox-run-once-extpack.xml << "EOF"
         </property_group>
         <property_group name='config' type='application'>
             <propval name='assembled' type='boolean' value='false' />
+            <propval name='version' type='astring' value='' />
         </property_group>
     </instance>
 </service>
