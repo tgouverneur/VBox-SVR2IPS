@@ -44,14 +44,15 @@ the .pkg or .extpack file!!
 Example
 =======
 
-  $ pkgrepo -s /mgmt/ips/vbox info
-  PUBLISHER PACKAGES STATUS           UPDATED
-  solaris   2        online           2014-03-30T03:47:26.227324Z
-  $ ls -l VirtualBox-4.3.8-SunOS-amd64-r92456.pkg 
-  -rw-r--r--   1 101      staff    217334784 Feb 25 19:06 VirtualBox-4.3.8-SunOS-amd64-r92456.pkg
-  $ /mgmt/bin/svr2ips_vbox.sh ./VirtualBox-4.3.8-SunOS-amd64-r92456.pkg /mgmt/ips/vbox /mgmt/tmp/lint-cache
-  [-] using specified cachedir: /mgmt/tmp/lint-cache
-  [-] Will try to build IPS package pkg://solaris/system/virtualbox@0.5.11,5.11-4.3.8.92456:
+```
+$ pkgrepo -s /mgmt/ips/vbox info
+PUBLISHER PACKAGES STATUS           UPDATED
+solaris   2        online           2014-03-30T03:47:26.227324Z
+$ ls -l VirtualBox-4.3.8-SunOS-amd64-r92456.pkg 
+-rw-r--r--   1 101      staff    217334784 Feb 25 19:06 VirtualBox-4.3.8-SunOS-amd64-r92456.pkg
+$ /mgmt/bin/svr2ips_vbox.sh ./VirtualBox-4.3.8-SunOS-amd64-r92456.pkg /mgmt/ips/vbox /mgmt/tmp/lint-cache
+[-] using specified cachedir: /mgmt/tmp/lint-cache
+[-] Will try to build IPS package pkg://solaris/system/virtualbox@0.5.11,5.11-4.3.8.92456:
          * pkgtrans: [DONE]
          * generating manifest: [DONE]
          * copy hack-script: [DONE]
@@ -62,12 +63,14 @@ Example
          * checking package: [DONE]
          * publishing package: [DONE]
          * cleaning the mess: [DONE]
- 
-  $ ls -ld Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack 
-  -rw-r-----   1 wildcat  staff    10432725 Feb 25 19:05 Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack
-  $ /mgmt/bin/svr2ips_xtp.sh ./Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack /mgmt/ips/vbox /mgmt/tmp/lint-cache
-  [-] using specified cachedir: /mgmt/tmp/lint-cache
-  [-] Will try to build IPS package pkg://solaris/system/virtualbox-extpack@0.5.11,5.11-4.3.8.92456:
+```
+
+```
+$ ls -ld Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack 
+-rw-r-----   1 wildcat  staff    10432725 Feb 25 19:05 Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack
+$ /mgmt/bin/svr2ips_xtp.sh ./Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack /mgmt/ips/vbox /mgmt/tmp/lint-cache
+[-] using specified cachedir: /mgmt/tmp/lint-cache
+[-] Will try to build IPS package pkg://solaris/system/virtualbox-extpack@0.5.11,5.11-4.3.8.92456:
          * building directory structure: [DONE]
          * copying extpack: [DONE]
          * copy hack-script: [DONE]
@@ -77,6 +80,7 @@ Example
          * checking package: [DONE]
          * publishing package: [DONE]
          * cleaning the mess: [DONE]
+```
 
 
 
@@ -96,7 +100,8 @@ Upgrade
 
 The upgrade procedure imply one single manual step, as you need to restart the virtualbox-run-once SMF service.
 This service will take care of upgrading kernel modules for new version of the package.
-
+  
+```
 $  modinfo|awk '$6 ~ /vbox/'
 267 fffffffff7cbf000  2e510 279   1  vboxdrv (VirtualBox HostDrv 4.1.12r77245)
 268 fffffffff7947540    d50 280   1  vboxnet (VirtualBox NetAdp 4.1.12r77245)
@@ -105,10 +110,12 @@ $  modinfo|awk '$6 ~ /vbox/'
 272 fffffffff7bf7000   75f8 283   1  vboxusb (VirtualBox USB 4.1.12r77245)
 $ pkg info virtualbox|grep Branch
         Branch: 4.1.12.77245
+```
 
 Let's upgrade to 4.3.8. Note: we only specify the upgrade of virtualbox-extpack here as we're using the Extention pack and this extpack
 has a dependancy over the regular virtualbox package.
 
+```
 $ pkg update --accept pkg:/system/virtualbox-extpack@0.5.11-4.3.8
             Packages to update:   2
        Create boot environment:  No
@@ -140,7 +147,7 @@ $  modinfo|awk '$6 ~ /vbox/'
 271 fffffffff7bf2000   45b0 282   1  vboxusbmon (VirtualBox USBMon 4.3.8r92456)
 272 fffffffff7bf7000   7528 283   1  vboxusb (VirtualBox USB 4.3.8r92456)
 $ svcadm restart virtualbox/run-once-extpack:default
-
+```
 
 
 
