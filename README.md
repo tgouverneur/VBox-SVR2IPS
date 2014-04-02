@@ -44,39 +44,39 @@ the .pkg or .extpack file!!
 Example
 =======
 
- $ pkgrepo -s /mgmt/ips/vbox info
- PUBLISHER PACKAGES STATUS           UPDATED
- solaris   2        online           2014-03-30T03:47:26.227324Z
- $ ls -l VirtualBox-4.3.8-SunOS-amd64-r92456.pkg 
- -rw-r--r--   1 101      staff    217334784 Feb 25 19:06 VirtualBox-4.3.8-SunOS-amd64-r92456.pkg
- $ /mgmt/bin/svr2ips_vbox.sh ./VirtualBox-4.3.8-SunOS-amd64-r92456.pkg /mgmt/ips/vbox /mgmt/tmp/lint-cache
- [-] using specified cachedir: /mgmt/tmp/lint-cache
- [-] Will try to build IPS package pkg://solaris/system/virtualbox@0.5.11,5.11-4.3.8.92456:
-        * pkgtrans: [DONE]
-        * generating manifest: [DONE]
-        * copy hack-script: [DONE]
-        * generating metadata: [DONE]
-        * generating dependancies: [DONE]
-        * resolving dependancies: [DONE]
-        * cleaning dependancies: [DONE]
-        * checking package: [DONE]
-        * publishing package: [DONE]
-        * cleaning the mess: [DONE]
-
- $ ls -ld Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack 
- -rw-r-----   1 wildcat  staff    10432725 Feb 25 19:05 Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack
- $ /mgmt/bin/svr2ips_xtp.sh ./Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack /mgmt/ips/vbox /mgmt/tmp/lint-cache
- [-] using specified cachedir: /mgmt/tmp/lint-cache
- [-] Will try to build IPS package pkg://solaris/system/virtualbox-extpack@0.5.11,5.11-4.3.8.92456:
-        * building directory structure: [DONE]
-        * copying extpack: [DONE]
-        * copy hack-script: [DONE]
-        * generating metadata: [DONE]
-        * adding dependancies: [DONE]
-        * resolving dependancies: [DONE]
-        * checking package: [DONE]
-        * publishing package: [DONE]
-        * cleaning the mess: [DONE]
+  $ pkgrepo -s /mgmt/ips/vbox info
+  PUBLISHER PACKAGES STATUS           UPDATED
+  solaris   2        online           2014-03-30T03:47:26.227324Z
+  $ ls -l VirtualBox-4.3.8-SunOS-amd64-r92456.pkg 
+  -rw-r--r--   1 101      staff    217334784 Feb 25 19:06 VirtualBox-4.3.8-SunOS-amd64-r92456.pkg
+  $ /mgmt/bin/svr2ips_vbox.sh ./VirtualBox-4.3.8-SunOS-amd64-r92456.pkg /mgmt/ips/vbox /mgmt/tmp/lint-cache
+  [-] using specified cachedir: /mgmt/tmp/lint-cache
+  [-] Will try to build IPS package pkg://solaris/system/virtualbox@0.5.11,5.11-4.3.8.92456:
+         * pkgtrans: [DONE]
+         * generating manifest: [DONE]
+         * copy hack-script: [DONE]
+         * generating metadata: [DONE]
+         * generating dependancies: [DONE]
+         * resolving dependancies: [DONE]
+         * cleaning dependancies: [DONE]
+         * checking package: [DONE]
+         * publishing package: [DONE]
+         * cleaning the mess: [DONE]
+ 
+  $ ls -ld Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack 
+  -rw-r-----   1 wildcat  staff    10432725 Feb 25 19:05 Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack
+  $ /mgmt/bin/svr2ips_xtp.sh ./Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack /mgmt/ips/vbox /mgmt/tmp/lint-cache
+  [-] using specified cachedir: /mgmt/tmp/lint-cache
+  [-] Will try to build IPS package pkg://solaris/system/virtualbox-extpack@0.5.11,5.11-4.3.8.92456:
+         * building directory structure: [DONE]
+         * copying extpack: [DONE]
+         * copy hack-script: [DONE]
+         * generating metadata: [DONE]
+         * adding dependancies: [DONE]
+         * resolving dependancies: [DONE]
+         * checking package: [DONE]
+         * publishing package: [DONE]
+         * cleaning the mess: [DONE]
 
 
 
