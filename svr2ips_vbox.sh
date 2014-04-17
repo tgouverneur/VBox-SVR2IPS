@@ -32,6 +32,7 @@
 #################################################################################################
 DEBUG=0
 IREPO=http://pkg.oracle.com/solaris/release
+PUBLISHER=solaris
 
 function debug() {
  msg=$1
@@ -92,7 +93,7 @@ minor=$(echo $filename|awk -F'-' '{print $NF}'|sed 's/^r//g');
 if [ "${minor}" = "" ]; then
   minor=0;
 fi
-vboxfmri="pkg://solaris/system/virtualbox@0.5.11,5.11-${major}.${minor}";
+vboxfmri="pkg://${PUBLISHER}/system/virtualbox@0.5.11,5.11-${major}.${minor}";
 tmpdir=$(mktemp -d);
 echo "[-] Will try to build IPS package ${vboxfmri}:";
 

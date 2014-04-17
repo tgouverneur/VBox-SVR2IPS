@@ -32,6 +32,7 @@
 #################################################################################################
 
 IREPO=http://pkg.oracle.com/solaris/release
+PUBLISHER=solaris
 
 if [ $# -lt 2 -o $# -gt 3 ]; then
   echo "$0 <XTP> <IPS repo> [cache]";
@@ -85,7 +86,7 @@ minor=$(echo $filename|cut -f 3 -d'-'|sed 's/\..*//g');
 if [ "${minor}" = "" ]; then
   minor=0;
 fi
-vboxfmri="pkg://solaris/system/virtualbox-extpack@0.5.11,5.11-${major}.${minor}";
+vboxfmri="pkg://${PUBLISHER}/system/virtualbox-extpack@0.5.11,5.11-${major}.${minor}";
 tmpdir=$(mktemp -d);
 echo "[-] Will try to build IPS package ${vboxfmri}:";
 
