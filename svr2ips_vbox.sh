@@ -343,7 +343,7 @@ echo "[DONE]";
 
 echo -n "\t* cleaning dependancies: ";
 cp ${filename}.p5m.2.res ${filename}.p5m.2.res.bak
-cat ${filename}.p5m.2.res.bak | awk '/^depend/ { printf $1 " "; for (i=2; i<=NF; i++) { if ($i ~ /@/) { split($i, x, "@"); printf x[1] " "; } else { printf $i " "; } } printf "\n"; continue; } {print}' > ${filename}.p5m.2.res
+cat ${filename}.p5m.2.res.bak | awk '/^depend/ { printf $1 " "; for (i=2; i<=NF; i++) { if ($i ~ /@/) { split($i, x, "@"); printf x[1] " "; } else { printf $i " "; } } printf "\n"; next; } {print}' > ${filename}.p5m.2.res
 echo "[DONE]";
 
 echo -n "\t* checking package: ";
