@@ -16,7 +16,7 @@
 ## You should have received a copy of the GNU General Public License along with this program. 
 ## If not, see http://www.gnu.org/licenses/.
 ##
-## Usage: svr2ips_xtp.sh <XTP> <IPS> [cache]
+## Usage: svr2ips_xtp.sh <XTP> <IPS> [publisher] [cache]
 ##
 ## where:
 ##	 * XTP is an extention pack file 
@@ -26,6 +26,8 @@
 ## 	   where the solaris publisher is
 ##	   present. Converted package
 ##	   will be sent to this repository.
+##	 * publisher is the publisher this
+##	   is published as. It defaults to "solaris"
 ##       * cache dir is optional but recommended
 ##         when you have multiple package to treat.
 ##

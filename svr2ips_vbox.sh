@@ -16,7 +16,7 @@
 ## You should have received a copy of the GNU General Public License along with this program. 
 ## If not, see http://www.gnu.org/licenses/.
 ##
-## Usage: svr2ips_vbox.sh <SVR4> <IPS> [cache]
+## Usage: svr2ips_vbox.sh <SVR4> <IPS> [publisher] [cache]
 ##
 ## where:
 ##	 * SVR4 is a package stream file
@@ -26,6 +26,8 @@
 ## 	   where the solaris publisher is
 ##	   present. Converted package
 ##	   will be sent to this repository.
+##	 * publisher is the publisher this
+##	   is published as. Defaults to "solaris"
 ##	 * cache dir is optional but recommended
 ##	   when you have multiple package to treat.
 ##
