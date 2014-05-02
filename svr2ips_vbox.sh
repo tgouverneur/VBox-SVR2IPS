@@ -76,9 +76,17 @@ if [ $rc -ne 0 ]; then
   exit 4;
 fi
 
-cachedir=
 if [ $# -eq 3 ]; then
-  cachedir=$3;
+  PUBLISHER=$3;
+else
+  echo "[!] publisher not specified";
+fi
+
+echo "[-] using publisher: $PUBLISHER";
+
+cachedir=
+if [ $# -eq 4 ]; then
+  cachedir=$4;
   if [ ! -d "${cachedir}" ]; then
     echo "[!] provided cachedir doesn't exist";
     exit 7;
