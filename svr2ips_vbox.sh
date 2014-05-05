@@ -44,7 +44,7 @@ function debug() {
 }
 
 if [ $# -lt 2 -o $# -gt 3 ]; then
-  echo "$0 <SVR4> <IPS repo> [cache]";
+  echo "$0 <SVR4> <IPS repo> [publisher] [cache]";
   exit 1;
 fi
 

@@ -37,7 +37,7 @@ IREPO=http://pkg.oracle.com/solaris/release
 PUBLISHER=solaris
 
 if [ $# -lt 2 -o $# -gt 3 ]; then
-  echo "$0 <XTP> <IPS repo> [cache]";
+  echo "$0 <XTP> <IPS repo> [publisher] [cache]";
   exit 1;
 fi
 
