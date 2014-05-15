@@ -16,7 +16,7 @@
 ## You should have received a copy of the GNU General Public License along with this program. 
 ## If not, see http://www.gnu.org/licenses/.
 ##
-## Usage: svr2ips_vbox.sh <SVR4> <IPS> [cache]
+## Usage: svr2ips_vbox.sh <SVR4> <IPS> [publisher] [cache]
 ##
 ## where:
 ##	 * SVR4 is a package stream file
@@ -26,6 +26,8 @@
 ## 	   where the solaris publisher is
 ##	   present. Converted package
 ##	   will be sent to this repository.
+##	 * publisher is the publisher this
+##	   is published as. Defaults to "solaris"
 ##	 * cache dir is optional but recommended
 ##	   when you have multiple package to treat.
 ##
@@ -42,7 +44,7 @@ function debug() {
 }
 
 if [ $# -lt 2 -o $# -gt 3 ]; then
-  echo "$0 <SVR4> <IPS repo> [cache]";
+  echo "$0 <SVR4> <IPS repo> [publisher] [cache]";
   exit 1;
 fi
 
@@ -76,9 +78,17 @@ if [ $rc -ne 0 ]; then
   exit 4;
 fi
 
-cachedir=
 if [ $# -eq 3 ]; then
-  cachedir=$3;
+  PUBLISHER=$3;
+else
+  echo "[!] publisher not specified";
+fi
+
+echo "[-] using publisher: $PUBLISHER";
+
+cachedir=
+if [ $# -eq 4 ]; then
+  cachedir=$4;
   if [ ! -d "${cachedir}" ]; then
     echo "[!] provided cachedir doesn't exist";
     exit 7;

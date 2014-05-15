@@ -16,7 +16,7 @@
 ## You should have received a copy of the GNU General Public License along with this program. 
 ## If not, see http://www.gnu.org/licenses/.
 ##
-## Usage: svr2ips_xtp.sh <XTP> <IPS> [cache]
+## Usage: svr2ips_xtp.sh <XTP> <IPS> [publisher] [cache]
 ##
 ## where:
 ##	 * XTP is an extention pack file 
@@ -26,6 +26,8 @@
 ## 	   where the solaris publisher is
 ##	   present. Converted package
 ##	   will be sent to this repository.
+##	 * publisher is the publisher this
+##	   is published as. It defaults to "solaris"
 ##       * cache dir is optional but recommended
 ##         when you have multiple package to treat.
 ##
@@ -35,7 +37,7 @@ IREPO=http://pkg.oracle.com/solaris/release
 PUBLISHER=solaris
 
 if [ $# -lt 2 -o $# -gt 3 ]; then
-  echo "$0 <XTP> <IPS repo> [cache]";
+  echo "$0 <XTP> <IPS repo> [publisher] [cache]";
   exit 1;
 fi
 
@@ -69,9 +71,17 @@ if [ $rc -ne 0 ]; then
   exit 4;
 fi
 
-cachedir=
 if [ $# -eq 3 ]; then
-  cachedir=$3;
+  PUBLISHER=$3;
+else
+  echo "[!] publisher not specified";
+fi
+
+echo "[-] using publisher: $PUBLISHER";
+
+cachedir=
+if [ $# -eq 4 ]; then
+  cachedir=$4;
   if [ ! -d "${cachedir}" ]; then
     echo "[!] provided cachedir doesn't exist";
     exit 7;
