@@ -43,7 +43,7 @@ function debug() {
  fi
 }
 
-if [ $# -lt 2 -o $# -gt 3 ]; then
+if [ $# -lt 2 -o $# -gt 4 ]; then
   echo "$0 <SVR4> <IPS repo> [publisher] [cache]";
   exit 1;
 fi
