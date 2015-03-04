@@ -321,6 +321,7 @@ echo "\tvalue=\"org.opensolaris.category.2008:Applications/System Utilities\"" >
 echo "set name=org.opensolaris.consolidation value=SUNWvbox" >>  ${filename}.meta
 echo "set name=variant.opensolaris.zone value=global" >> ${filename}.meta
 echo "set name=variant.arch value=${pArch}" >> ${filename}.meta
+echo "set name=pkg.depend.runpath value=\$PKGDEPEND_RUNPATH:opt/VirtualBox/amd64" >> ${filename}.meta
 cp ${filename}.meta ${filename}.p5m
 cat ${filename}.manifest | awk 'BEGIN{f=1} /^legacy/ { f=0 } { if (f == 1) { print } else { if ($NF != "\\") { f=1 } } }' >> ${filename}.p5m
 echo "[DONE]";
