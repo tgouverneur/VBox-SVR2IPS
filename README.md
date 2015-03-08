@@ -27,7 +27,7 @@ $ ./svr2ips_vbox.sh
 ./svr2ips_vbox.sh <SVR4> <IPS repo> [publisher] [cache]
 
  * SVR4 is the .pkg file extracted from the VirtualBox's downloaded package.
- * IPS repo, is where you want the generated IPS package to be sent to.
+ * IPS repo, is where you want the generated IPS package to be sent to. (Full path need to be used)
  * publisher is the publisher this is published as. It defaults to "solaris"
  * cache, optionnal lint-cache directory, to speedup package resolution if you're going to run the script multiple times.
 
@@ -36,7 +36,7 @@ $ ./svr2ips_xtp.sh
 ./svr2ips_xtp.sh <XTP> <IPS repo> [publisher] [cache]
 
  * SVR4 is the .extpack file as downloaded from VirtualBox.
- * IPS repo, is where you want the generated IPS package to be sent to.
+ * IPS repo, is where you want the generated IPS package to be sent to. (Full path need to be used)
  * publisher is the publisher this is published as. It defaults to "solaris"
  * cache, optionnal lint-cache directory, to speedup package resolution if you're going to run the script multiple times.
 
